@@ -1,0 +1,13 @@
+// This file is required for Azure Static Web Apps to route requests correctly.
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/{*all}",
+      "serve": "/index.html"
+    }
+  ]
+}

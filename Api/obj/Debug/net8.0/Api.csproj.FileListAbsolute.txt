@@ -1,0 +1,13 @@
+/workspaces/booksapp/wwwroot/api/net8.0/Api.deps.json
+/workspaces/booksapp/wwwroot/api/net8.0/Api.dll
+/workspaces/booksapp/wwwroot/api/net8.0/Api.pdb
+/workspaces/booksapp/Api/obj/Debug/net8.0/Api.csproj.AssemblyReference.cache
+/workspaces/booksapp/Api/obj/Debug/net8.0/Api.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/booksapp/Api/obj/Debug/net8.0/Api.AssemblyInfoInputs.cache
+/workspaces/booksapp/Api/obj/Debug/net8.0/Api.AssemblyInfo.cs
+/workspaces/booksapp/Api/obj/Debug/net8.0/Api.csproj.CoreCompileInputs.cache
+/workspaces/booksapp/Api/obj/Debug/net8.0/Api.sourcelink.json
+/workspaces/booksapp/Api/obj/Debug/net8.0/Api.dll
+/workspaces/booksapp/Api/obj/Debug/net8.0/refint/Api.dll
+/workspaces/booksapp/Api/obj/Debug/net8.0/Api.pdb
+/workspaces/booksapp/Api/obj/Debug/net8.0/ref/Api.dll

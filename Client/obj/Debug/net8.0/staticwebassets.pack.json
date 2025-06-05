@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "/workspaces/booksapp/Client/obj/Debug/net8.0/compressed/xnmzi2kbrk.gz",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "/workspaces/booksapp/Client/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/workspaces/booksapp/Client/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/workspaces/booksapp/wwwroot/net8.0/wwwroot/_framework/blazor.webassembly.js",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Client.props",
+      "PackagePath": "build\\Client.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Client.props",
+      "PackagePath": "buildMultiTargeting\\Client.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Client.props",
+      "PackagePath": "buildTransitive\\Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
