@@ -106,7 +106,7 @@
       },
       "rest": {
         "enabled": true,
-        "methods": ["post"]
+        "methods": ["get"]
       },
       "permissions": [
         {
@@ -122,7 +122,7 @@
       },
       "rest": {
         "enabled": true,
-        "methods": ["post"]
+        "methods": ["get"]
       },
       "permissions": [
         {
