@@ -2,7 +2,7 @@
   "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.10.6/staticwebapp.database.config.json",
   "dataSource": {
     "databaseType": "AzureSQL",
-    "connectionString": "@env('Production')"
+    "connectionString": "@env('DATABASE_CONNECTION_STRING')"
   },
   "runtime": {
     "rest": true,
