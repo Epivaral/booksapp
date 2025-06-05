@@ -1,0 +1,48 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.10.6/staticwebapp.database.config.json",
+  "dataSource": {
+    "databaseType": "AzureSQL",
+    "connectionString": "@env('Production')"
+  },
+  "runtime": {
+    "rest": true,
+    "graphql": true,
+    "host": "/api",
+    "environment": "Production"
+  },
+  "entities": {
+    "Books": {
+      "source": "Books",
+      "rest": true,
+      "graphql": true,
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [ "read", "create", "update", "delete" ]
+        }
+      ],
+      "procedures": {
+        "add": {
+          "name": "sp_AddBook",
+          "parameters": ["Title", "Author", "Genre", "ReadStatus", "Description"]
+        },
+        "update": {
+          "name": "sp_UpdateBook",
+          "parameters": ["BookID", "Title", "Author", "Genre", "ReadStatus", "Description"]
+        },
+        "delete": {
+          "name": "sp_DeleteBook",
+          "parameters": ["BookID"]
+        },
+        "getById": {
+          "name": "sp_GetBookByID",
+          "parameters": ["BookID"]
+        },
+        "getAll": {
+          "name": "sp_GetAllBooks",
+          "parameters": []
+        }
+      }
+    }
+  }
+}
