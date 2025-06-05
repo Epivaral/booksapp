@@ -1,48 +1,135 @@
 {
-  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.10.6/staticwebapp.database.config.json",
-  "dataSource": {
-    "databaseType": "AzureSQL",
-    "connectionString": "@env('DATABASE_CONNECTION_STRING')"
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v1.1.7/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "mssql",
+    "connection-string": "@env('DATABASE_CONNECTION_STRING')",
+    "options": {
+      "set-session-context": false
+    }
   },
   "runtime": {
-    "rest": true,
-    "graphql": true,
-    "host": "/api",
-    "environment": "Production"
+    "rest": {
+      "enabled": true,
+      "path": "/rest",
+      "request-body-strict": true
+    },
+    "graphql": {
+      "enabled": true,
+      "path": "/graphql",
+      "allow-introspection": true
+    },
+    "host": {
+      "cors": {
+        "origins": [],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      },
+      "mode": "development"
+    }
   },
   "entities": {
-    "Books": {
-      "source": "Books",
-      "rest": true,
-      "graphql": true,
+    "AddBook": {
+      "source": {
+        "object": "sp_AddBook",
+        "type": "stored-procedure",
+        "parameters": {
+          "Title": "s",
+          "Author": "s",
+          "Genre": "s",
+          "ReadStatus": "b",
+          "Description": "s"
+        }
+      },
+      "rest": {
+        "enabled": true,
+        "methods": ["post"]
+      },
       "permissions": [
         {
           "role": "anonymous",
-          "actions": [ "read", "create", "update", "delete" ]
+          "actions": [{ "action": "execute" }]
         }
-      ],
-      "procedures": {
-        "add": {
-          "name": "sp_AddBook",
-          "parameters": ["Title", "Author", "Genre", "ReadStatus", "Description"]
-        },
-        "update": {
-          "name": "sp_UpdateBook",
-          "parameters": ["BookID", "Title", "Author", "Genre", "ReadStatus", "Description"]
-        },
-        "delete": {
-          "name": "sp_DeleteBook",
-          "parameters": ["BookID"]
-        },
-        "getById": {
-          "name": "sp_GetBookByID",
-          "parameters": ["BookID"]
-        },
-        "getAll": {
-          "name": "sp_GetAllBooks",
-          "parameters": []
+      ]
+    },
+    "UpdateBook": {
+      "source": {
+        "object": "sp_UpdateBook",
+        "type": "stored-procedure",
+        "parameters": {
+          "BookID": "i",
+          "Title": "s",
+          "Author": "s",
+          "Genre": "s",
+          "ReadStatus": "b",
+          "Description": "s"
         }
-      }
+      },
+      "rest": {
+        "enabled": true,
+        "methods": ["post"]
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [{ "action": "execute" }]
+        }
+      ]
+    },
+    "DeleteBook": {
+      "source": {
+        "object": "sp_DeleteBook",
+        "type": "stored-procedure",
+        "parameters": {
+          "BookID": "i"
+        }
+      },
+      "rest": {
+        "enabled": true,
+        "methods": ["post"]
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [{ "action": "execute" }]
+        }
+      ]
+    },
+    "GetBookByID": {
+      "source": {
+        "object": "sp_GetBookByID",
+        "type": "stored-procedure",
+        "parameters": {
+          "BookID": "i"
+        }
+      },
+      "rest": {
+        "enabled": true,
+        "methods": ["post"]
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [{ "action": "execute" }]
+        }
+      ]
+    },
+    "GetAllBooks": {
+      "source": {
+        "object": "sp_GetAllBooks",
+        "type": "stored-procedure"
+      },
+      "rest": {
+        "enabled": true,
+        "methods": ["post"]
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [{ "action": "execute" }]
+        }
+      ]
     }
   }
 }
